@@ -1,19 +1,18 @@
 
 
 import * as t from '../ActionTypes';
+import data from '../Data_set/data.json'
 
-const intialState = {
-	intial_data: []
-}
-
-const app = (state = intialState, action) => {
+const app = (state = data , action) => {
 
 	switch(action.type){
-		case t.SAVE_DATA:
-		    return []
+
+		case t.ADD_TEAM_MEMBER:
+			return state
+			break;
 
 		default:
-			return []
+			return state
 	}
 }
 

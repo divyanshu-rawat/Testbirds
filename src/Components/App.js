@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
 import '../Assets/App.css';
-import data from '../Data_set/data.json'
 import AddTeamMember from '../Containers/AddTeamMemberContainer';
+import ShowTeamMembers from '../Containers/ShowTeamMembersContainer';
 
 class App extends Component {
 
@@ -10,14 +10,11 @@ class App extends Component {
   	super(props)
   }
 
-  componentDidMount(){
-  	// console.log('get_data',data);
-  }
-
   render() {
     return (
-      <div className="">
+      <div className="container">
        		<AddTeamMember />
+       		<ShowTeamMembers />
       </div>
     );
   }
