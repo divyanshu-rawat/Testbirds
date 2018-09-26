@@ -7,7 +7,7 @@ import { add_team_member } from '../ActionCreators';
 
 
 const mapStateToProps = (state) => {
-	return state
+	return { state : state}
 }
 
 // const mapDispatchToProps = (dispatch) => bindActionCreators({ add_team_member }, dispatch);

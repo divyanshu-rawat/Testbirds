@@ -12,7 +12,7 @@ class ShowTeamMembers extends Component {
   	super(props)
   	this.state = {
   		data: [],
-  		show_members : 4,
+  		show_members : 5,
       show_more_Button:true
   	}
 
@@ -20,7 +20,7 @@ class ShowTeamMembers extends Component {
   }
 
   componentDidMount(){
-  	this.setState({ data : this.props.app }) 
+  	this.setState({ data : this.props.state.app }) 
   }
 
   componentWillReceiveProps(){}
@@ -33,7 +33,7 @@ class ShowTeamMembers extends Component {
           })
           :
           this.setState({
-            show_members: this.state.show_members >= this.state.data.length ? this.state.show_members : this.state.show_members + 4
+            show_members: this.state.show_members >= this.state.data.length ? this.state.show_members : this.state.show_members + 5
           })   
 
   }

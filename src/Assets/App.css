@@ -13,3 +13,24 @@
 ._border_black{
   /*border: 1px solid black;*/
 }
+
+.drop-down-items{
+	cursor: pointer !important;
+	height: 34px;
+    padding: 6px 1px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+._margin_top{
+	margin-top: 2%;
+}
+
+.cursor{
+	cursor: pointer;
+}
