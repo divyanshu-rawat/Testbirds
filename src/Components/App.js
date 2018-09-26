@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import '../Assets/App.css';
 import AddTeamMember from '../Containers/AddTeamMemberContainer';
 import ShowTeamMembers from '../Containers/ShowTeamMembersContainer';
+import {Navbar} from '../Router/Components/NavigationBar'
 
 class App extends Component {
 
@@ -12,9 +13,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-       		<AddTeamMember />
-       		<ShowTeamMembers />
+      <div className="">
+          <Navbar />
       </div>
     );
   }

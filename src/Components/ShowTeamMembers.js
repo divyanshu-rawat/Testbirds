@@ -11,10 +11,11 @@ class ShowTeamMembers extends Component {
   	super(props)
   	this.state = {
   		data: [],
-  		show_members : 4
+  		show_members : 4,
+      show_more_Button:true
   	}
 
-    this.handleShowMore = this.handleShowMore.bind(this)
+    this.toggle = this.toggle.bind(this)
   }
 
   componentDidMount(){
@@ -23,10 +24,17 @@ class ShowTeamMembers extends Component {
 
   componentWillReceiveProps(){}
 
-  handleShowMore() {
-    this.setState({
-      show_members: this.state.show_members >= this.state.data.length ? this.state.show_members : this.state.show_members + 4
-    })
+  toggle() {
+
+    this.state.show_members >= this.state.data.length ?
+          this.setState({
+              show_members: this.state.show_members >= this.state.data.length ? this.state.show_members - 8 : this.state.show_members 
+          })
+          :
+          this.setState({
+            show_members: this.state.show_members >= this.state.data.length ? this.state.show_members : this.state.show_members + 4
+          })   
+
   }
 
   render() {
@@ -44,9 +52,10 @@ class ShowTeamMembers extends Component {
 			       	     			 		<p> {listValue.username} </p>
 			       	     				</div>
 			            			})
-			            	    }
+			            	  }
 			           	</div>
-                   <button type="button" className="btn btn-primary" onClick={this.handleShowMore}>Show More!</button>
+                  { this.state.show_members < this.state.data.length && <button type="button" className="btn btn-primary" onClick={this.toggle}>Show More!</button>}
+                  { this.state.show_members >= this.state.data.length && <button type="button" className="btn btn-primary" onClick={this.toggle}>Show Less!</button>}
 		      </div>	
     	
     	);

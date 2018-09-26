@@ -5,13 +5,18 @@ import App from './Containers/AppContainer';
 import { Provider } from 'react-redux';
 import {createStore} from 'redux';
 import rootReducer from './Reducers'
+import AppRouter from './Router/router'
 
 const store = createStore(rootReducer)
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
 
+const Root = ({ store }) => (
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
+)
+
+ReactDOM.render(
+  <Root store={store}/>,
+  document.getElementById('root')
+)
