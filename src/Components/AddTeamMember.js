@@ -10,24 +10,14 @@ class AddTeamMember extends Component {
   }
 
   componentDidMount(){
- 
+    console.log('shoe__',this.props)
   }
 
   render() {
     return (
       <div className="">
-       <h3 className = "">Add Team Member!</h3>
-       <form className="form-inline" action="/action_page.php">
-          <div className="form-group">
-            <label htmlFor="email">Username:</label>
-            <input type="email" className="form-control" id="email" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="pwd">Role:</label>
-            <input type="password" className="form-control" id="pwd" />
-          </div>
-          <button type="submit" className="btn btn-default">Submit</button>
-        </form>
+       <h4 className = "_margin_five">Add Team Member!</h4>
+       
       </div>
     );
   }

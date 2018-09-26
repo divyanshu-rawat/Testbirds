@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import '../Assets/App.css';
 import data from '../Data_set/data.json'
 import img from '../Assets/avatar-default.png'
+import {Navbar} from '../Router/Components/NavigationBar'
 
 class ShowTeamMembers extends Component {
 
@@ -41,23 +42,22 @@ class ShowTeamMembers extends Component {
 
     	return (
 
-		      <div className="">
-		       <h3 className = "_margin_five">Team Members!</h3>
-			            <div className="row">
-					           {
-					           		this.state.data && this.state && this.state.data.slice(0, this.state.show_members).map((listValue,i) => {
-			       	     				return <div className="_margin_five col-lg-2 _border_black " key={i}  >
-			       	     			 		<img className="inside_margin" src= {img} alt="User Image" />
-			       	     			 		<h4>({listValue.role})</h4>
-			       	     			 		<p> {listValue.username} </p>
-			       	     				</div>
-			            			})
-			            	  }
-			           	</div>
-                  { this.state.show_members < this.state.data.length && <button type="button" className="btn btn-primary" onClick={this.toggle}>Show More!</button>}
-                  { this.state.show_members >= this.state.data.length && <button type="button" className="btn btn-primary" onClick={this.toggle}>Show Less!</button>}
+          <div className = "container">
+		       <h3 className = "_margin_five ">Team Members!</h3>
+	            <div className="row">
+			           {
+			           		this.state.data && this.state && this.state.data.slice(0, this.state.show_members).map((listValue,i) => {
+	       	     				return <div className="_margin_five col-lg-2 _border_black " key={i}  >
+	       	     			 		<img className="inside_margin" src= {img} alt="User Image" />
+	       	     			 		<h4>({listValue.role})</h4>
+	       	     			 		<p> {listValue.username} </p>
+	       	     				</div>
+	            			})
+	            	  }
+	           	</div>
+              { this.state.show_members < this.state.data.length && <button type="button" className="btn btn-primary" onClick={this.toggle}>Show More!</button>}
+              { this.state.show_members >= this.state.data.length && <button type="button" className="btn btn-primary" onClick={this.toggle}>Show Less!</button>}
 		      </div>	
-    	
     	);
   }
 }

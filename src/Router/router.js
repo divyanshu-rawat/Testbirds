@@ -9,9 +9,11 @@ import Welcome from '../Components/Welcome'
 const AppRouter = () => (
   <Router>
     <div>
+
+      <Route path="/" component={Welcome}/>
       <Route exact path="/addteammember" component={AddTeamMember}/>
       <Route path="/showteammembers" component={ShowTeamMembers}/>
-      <Route path="/" component={Welcome}/>
+     
     </div>
   </Router>
 )
