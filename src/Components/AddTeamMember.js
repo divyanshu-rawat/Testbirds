@@ -2,7 +2,10 @@
 import React, { Component } from 'react';
 import '../Assets/App.css';
 import data from '../Data_set/data.json'
-import Autocomplete from 'react-autocomplete'
+// import Autocomplete from 'react-autocomplete'
+import Team from '../Containers/TeamContainer';
+import AutoComplete from './AutoComplete'
+
 
 class AddTeamMember extends Component {
 
@@ -56,34 +59,15 @@ class AddTeamMember extends Component {
             { 
              
               this.state.data && this.state && this.state.showplus && <div>
-
-              <Autocomplete className = "drop-down"
-                
-                  shouldItemRender={(item, value) => item.username.toLowerCase().indexOf(value.toLowerCase()) > -1}
-                  getItemValue={(item) => item.username}
-                  items={this.state.data}
-                  
-                  renderItem={(item, isHighlighted) =>
-                    <div key={item.id} style={{ background: isHighlighted ? 'lightgray' : 'white'}} className = "drop-down-items">
-                      <p>{item.username} ({item.role})</p>
-                    </div>
-                  }
-                  
-                  value={this.state.value}
-                  onChange={e => this.setState({ value: e.target.value })}
-                  onSelect={(val) => {this.set_select(val)}}
-                /> 
                
-              
-                <i className="fas fa-times fa-2x cursor" onClick = {this.reset}></i>
-               
+              <AutoComplete suggestions={this.state.data} onSelect={(val) => {this.set_select(val)}} />
 
              </div>
             }
               
-            {!this.state.showplus && <div><i className="fas fa-plus-circle fa-2x cursor" onClick = {this.toggleShow}></i> <span>Add Team Members</span> </div>} 
-        
-            <h4 className = "">Your Team For This Test!</h4>
+            {!this.state.showplus && <div><i className="fa fa-plus-circle fa-3x cursor" onClick = {this.toggleShow}></i> <span>Add Team Members</span> </div>} 
+
+            <Team />
         </div>
 
 
