@@ -2,3 +2,4 @@
 
 
 export const ADD_TEAM_MEMBER = "ADD_TEAM_MEMBER"
+export const DELETE_TEAM_MEMBER = "DELETE_TEAM_MEMBER"

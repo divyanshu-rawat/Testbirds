@@ -36,6 +36,8 @@ class AutoComplete extends React.Component{
 
 	onClick (event) {
 
+		const {onSelect} = this.props
+
 	    this.setState({
 	      activeSuggestion: 0,
 	      filteredSuggestions: [],
@@ -44,7 +46,7 @@ class AutoComplete extends React.Component{
 	      showDropdown: false
 	    });
 
-	    this.props.onSelect(event.currentTarget.innerText)
+	    onSelect(event.currentTarget.innerText)
 	 };
 
 	dropdown(){
@@ -144,7 +146,7 @@ class AutoComplete extends React.Component{
 
 	 return(
 
-		 <div className = "container">
+		 <div className = "">
 			<div className="">
 			  <label htmlFor="">AutoComplete : </label>
 			  <div className="set_width">

@@ -12,7 +12,7 @@ class ShowTeamMembers extends Component {
   	super(props)
   	this.state = {
   		data: [],
-  		show_members : 5,
+  		ShowMembers : 5,
       show_more_Button:true
   	}
 
@@ -27,18 +27,22 @@ class ShowTeamMembers extends Component {
 
   toggle() {
 
-    this.state.show_members >= this.state.data.length ?
+    const {state:{ShowMembers, data}} = this
+
+          ShowMembers >= data.length ?
           this.setState({
-              show_members: this.state.show_members >= this.state.data.length ? this.state.show_members - 8 : this.state.show_members 
+              ShowMembers: ShowMembers >= data.length ? ShowMembers - 8 : ShowMembers 
           })
           :
           this.setState({
-            show_members: this.state.show_members >= this.state.data.length ? this.state.show_members : this.state.show_members + 5
+              ShowMembers: ShowMembers >= data.length ? ShowMembers : ShowMembers + 5
           })   
 
   }
 
   render() {
+
+      const {toggle,state:{ShowMembers, data}} = this
 
     	return (
 
@@ -46,17 +50,19 @@ class ShowTeamMembers extends Component {
 		       <h3 className = "_margin_five ">Team Members!</h3>
 	            <div className="row">
 			           {
-			           		this.state.data && this.state && this.state.data.slice(0, this.state.show_members).map((listValue,i) => {
-	       	     				return <div className="_margin_five col-lg-2 _border_black " key={i}  >
-	       	     			 		<img className="inside_margin" src= {img} alt="User Image" />
-	       	     			 		<h4>({listValue.role})</h4>
+			           	 data && this.state && data.slice(0, ShowMembers).map((listValue,i) => {
+
+	       	     				return <div className="team-member col-lg-2 " key={i}>
+                      
+	       	     			 		<img className="insideMargin" src= {img} alt="User Image" width = "50"/>
+	       	     			 		<h4 className = "displayInline">({listValue.role})</h4>
 	       	     			 		<p> {listValue.username} </p>
 	       	     				</div>
 	            			})
 	            	  }
 	           	</div>
-              { this.state.show_members < this.state.data.length && <button type="button" className="btn btn-primary" onClick={this.toggle}>Show More!</button>}
-              { this.state.show_members >= this.state.data.length && <button type="button" className="btn btn-primary" onClick={this.toggle}>Show Less!</button>}
+              { ShowMembers <  data.length && <button type="button" className="btn btn-primary" onClick={toggle}>Show More!</button>}
+              { ShowMembers >= data.length && <button type="button" className="btn btn-primary" onClick={toggle}>Show Less!</button>}
 		      </div>	
     	);
   }

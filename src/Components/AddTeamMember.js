@@ -18,14 +18,9 @@ class AddTeamMember extends Component {
       showplus: false
     }
 
-    this.add_team_member = this.add_team_member.bind(this)
-    this.set_select = this.set_select.bind(this)
+    this.setSelected = this.setSelected.bind(this)
     this.toggleShow = this.toggleShow.bind(this)
     this.reset      = this.reset.bind(this)
-  }
-
-  add_team_member(){
-
   }
 
   reset(){
@@ -36,41 +31,43 @@ class AddTeamMember extends Component {
     this.setState({ showplus: !this.state.showplus })
   }
 
-  set_select(value){
+  setSelected(value){
 
+    const {add_team_member} = this.props
     this.setState({ value: value })
+    
     let obj = this.state.data.filter(item => item.username == value );
-    this.props.add_team_member(obj)
+    add_team_member(obj)
   }
 
   componentDidMount(){
+   
     this.setState({ data : this.props.state.app }) 
   }
 
   componentDidUpdate(){}
 
   render() {
+
+    const {setSelected,toggleShow, state : {showplus, data}} = this
+
     return (
-      <div className="container _margin_top">
-       
-        
-        <div className = "">
+      <div className="_margin_top">
+        <div className = "col-lg-12">
+            <div className = "col-lg-4">
+                { 
+                  data && this.state && showplus && 
+                  <div>
+                      <AutoComplete suggestions={data} onSelect={(val) => {setSelected(val)}} />
+                  </div>
+                }
+                    {!showplus && <div><i className="fa fa-plus-circle fa-3x cursor" onClick = {toggleShow}></i> <span>Add Team Members</span> </div>}
+            </div>
 
-            { 
-             
-              this.state.data && this.state && this.state.showplus && <div>
-               
-              <AutoComplete suggestions={this.state.data} onSelect={(val) => {this.set_select(val)}} />
-
-             </div>
-            }
-              
-            {!this.state.showplus && <div><i className="fa fa-plus-circle fa-3x cursor" onClick = {this.toggleShow}></i> <span>Add Team Members</span> </div>} 
-
-            <Team />
+            <div className = "col-lg-6">
+                <Team />
+            </div>
         </div>
-
-
       </div>
     );
   }

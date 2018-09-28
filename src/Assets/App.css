@@ -3,15 +3,11 @@
   margin: 10px !important;
 }
 ._margin_five{
-  margin: 10px;
+  
 }
 
-.inside_margin{
+.insideMargin{
   margin: 5px;
-}
-
-._border_black{
-  /*border: 1px solid black;*/
 }
 
 .drop-down-items{
@@ -29,6 +25,14 @@
 
 ._margin_top{
 	margin-top: 2%;
+}
+.displayInline{
+  display: inline;
+}
+
+.team-member{
+  border: 1px solid black;
+  margin: 10px;
 }
 
 .cursor{
