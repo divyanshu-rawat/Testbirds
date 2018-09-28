@@ -6,8 +6,6 @@ import * as t from '../ActionTypes';
 
 const Team = (state = [] , action) => {
 
-	console.log('action',action)
-
 	switch(action.type){
 
 		case t.ADD_TEAM_MEMBER:

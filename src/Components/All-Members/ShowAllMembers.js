@@ -1,12 +1,11 @@
 
 
 import React, { Component } from 'react';
-import '../Assets/App.css';
-import data from '../Data_set/data.json'
-import img from '../Assets/avatar-default.png'
-import {Navbar} from '../Router/Components/NavigationBar'
+import '../../Assets/App.css';
+import data from '../../Data_set/data.json'
+import img from '../../Assets/avatar-default.png'
 
-class ShowTeamMembers extends Component {
+class ShowAllMembers extends Component {
 
   constructor(props){
   	super(props)
@@ -70,4 +69,4 @@ class ShowTeamMembers extends Component {
 
 
 
-export default ShowTeamMembers;
+export default ShowAllMembers;

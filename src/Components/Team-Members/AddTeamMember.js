@@ -1,10 +1,9 @@
 
 import React, { Component } from 'react';
-import '../Assets/App.css';
-import data from '../Data_set/data.json'
-// import Autocomplete from 'react-autocomplete'
-import Team from '../Containers/TeamContainer';
-import AutoComplete from './AutoComplete'
+import '../../Assets/App.css';
+import data from '../../Data_set/data.json'
+import Team from '../../Containers/Team-Members-Container/TeamContainer';
+import AutoComplete from '../AutoComplete-Component'
 
 
 class AddTeamMember extends Component {
@@ -52,7 +51,7 @@ class AddTeamMember extends Component {
     const {setSelected,toggleShow, state : {showplus, data}} = this
 
     return (
-      <div className="_margin_top">
+      <div className="marginTop">
         <div className = "col-lg-12">
             <div className = "col-lg-4">
                 { 
@@ -64,7 +63,7 @@ class AddTeamMember extends Component {
                     {!showplus && <div><i className="fa fa-plus-circle fa-3x cursor" onClick = {toggleShow}></i> <span>Add Team Members</span> </div>}
             </div>
 
-            <div className = "col-lg-6">
+            <div className = "col-lg-7">
                 <Team />
             </div>
         </div>

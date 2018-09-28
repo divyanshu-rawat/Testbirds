@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes  from "prop-types";
-import '../Assets/AutoComplete.css';
+import '../../Assets/AutoComplete.css';
 
 
 class AutoComplete extends React.Component{
@@ -59,7 +59,7 @@ class AutoComplete extends React.Component{
 	}
 
 	reset(){
-		console.log('clicked')
+
 		this.setState({
 	      activeSuggestion: 0,
 	      filteredSuggestions: [],
@@ -116,7 +116,8 @@ class AutoComplete extends React.Component{
         suggestionsListComponent = (
 	        <ul className = "suggestions">
 	          <li className= "form-control" >
-		                  No suggestions!
+		                 <p>Team Member Not Found!</p>
+		                 <small>Maybe He/She is not yet in your team?</small>
 		       </li>
 		    </ul>
         );

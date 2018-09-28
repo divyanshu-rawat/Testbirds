@@ -1,7 +1,7 @@
 
 
 import React, { Component } from 'react';
-import img from '../Assets/avatar-default.png'
+import img from '../../Assets/avatar-default.png'
 
 
 class Member extends React.Component{
@@ -39,7 +39,10 @@ class Member extends React.Component{
 		return(
 
 			<div>
-			    <h4>Your Team For This Test!</h4>
+			    <h4></h4>
+			    <div className="alert alert-info">
+				  Your <strong>Team</strong> For This Test.
+				</div>
 
 			    <div className="row">
 			        <div>

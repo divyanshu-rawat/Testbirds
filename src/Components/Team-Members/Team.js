@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
-import '../Assets/App.css';
-import {Navbar} from '../Router/Components/NavigationBar'
-import Member from '../Containers/MemberContainer'
+import '../../Assets/App.css';
+import {Navbar} from '../../Router/Components/NavigationBar'
+import Member from '../../Containers/Team-Members-Container/MemberContainer'
 
 class Team extends Component {
 
