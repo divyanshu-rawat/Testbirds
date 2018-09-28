@@ -36,6 +36,10 @@
 	cursor: pointer;
 }
 
+.marginTop{
+  margin-top: 20px
+}
+
 .displayFlex{
   display:flex
 }

@@ -4,6 +4,7 @@ import '../../Assets/App.css';
 import data from '../../DataSet/data.json'
 import Team from '../../Containers/Team-Members-Container/TeamContainer';
 import AutoComplete from '../AutoComplete-Component'
+import {Navbar} from '../..//Router/Components/NavigationBar'
 
 
 class AddTeamMember extends Component {
@@ -32,10 +33,15 @@ class AddTeamMember extends Component {
 
   setSelected(value){
 
+    let extract = value.split("-")
+    let username = extract[0].trim()
+
     const {add_team_member} = this.props
-    this.setState({ value: value })
+    this.setState({ value: username })
     
-    let obj = this.state.data.filter(item => item.username == value );
+    let obj = this.state.data.filter(item => item.username == username );
+
+    console.log('Current Team', this.props.state)
     add_team_member(obj)
   }
 
@@ -51,8 +57,11 @@ class AddTeamMember extends Component {
     const {setSelected,toggleShow, state : {showplus, data}} = this
 
     return (
+
+    <div>
+      <Navbar />
       <div className="marginTop">
-        <div className = "col-lg-12">
+        <div className = "col-lg-12 col-md-12 col-xs-12 col-sm-12">
             <div className = "col-lg-4">
                 { 
                   data && this.state && showplus && 
@@ -63,11 +72,12 @@ class AddTeamMember extends Component {
                     {!showplus && <div><i className="fa fa-plus-circle fa-3x cursor" onClick = {toggleShow}></i> <span>Add Team Members</span> </div>}
             </div>
 
-            <div className = "col-lg-7">
+            <div className = "col-lg-7 marginTop">
                 <Team />
             </div>
         </div>
       </div>
+    </div>
     );
   }
 }

@@ -10,8 +10,8 @@ const AppRouter = () => (
   <Router>
     <div>
 
-      <Route path="/" component={Welcome}/>
-      <Route exact path="/addteammember" component={AddTeamMember}/>
+      <Route exact path="/" component={Welcome}/>
+      <Route path="/addteammember" component={AddTeamMember}/>
       <Route path="/showallmembers" component={ShowTeamMembers}/>
      
     </div>

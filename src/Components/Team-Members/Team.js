@@ -10,7 +10,7 @@ class Team extends Component {
   	super(props)
 
     this.state = {
-      ShowMembers : 5,showLess : false, showMore: true
+      ShowMembers : 5
     }
 
     this.remove = this.remove.bind(this)
@@ -37,7 +37,7 @@ class Team extends Component {
 
   render() {
 
-      const {remove,increment, state:{ShowMembers,showLess,showMore}} = this
+      const {remove,increment, state:{ShowMembers}} = this
       const {Team} = this.props.state
     	return (
         <div>
@@ -51,7 +51,7 @@ class Team extends Component {
             })}
           </div>	         
           <div className = "displayFlex">
-              {Team.length > ShowMembers && showMore && <button type="button" className="btn btn-primary" onClick={increment}>Show More!</button>}
+              {Team.length > ShowMembers && <button type="button" className="btn btn-primary" onClick={increment}>Show More!</button>}
     
           </div>   
 
@@ -62,5 +62,3 @@ class Team extends Component {
 
 export default Team;
 
-
- // {Team.length > 10  && showLess && <button type="button" className="btn btn-primary" onClick={toggle}>Show Less!</button>}

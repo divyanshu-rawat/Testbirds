@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes  from "prop-types";
 import '../../Assets/AutoComplete.css';
+import img from '../../Assets/avatar-default.png'
 
 
 class AutoComplete extends React.Component{
@@ -106,7 +107,8 @@ class AutoComplete extends React.Component{
 
               return (
                 <li className= "form-control" key={suggestion.username} onClick={onClick} >
-                  {suggestion.username}
+                  <img className="insideMargin" src= {img} alt="User Image" width = "20"/>
+                  {suggestion.username} - {suggestion.role}
                 </li>
               );
             })}
@@ -135,7 +137,8 @@ class AutoComplete extends React.Component{
 
               return (
                 <li className= "form-control" key={suggestion.username} onClick={onClick} >
-                  {suggestion.username}
+                  <img className="insideMargin" src= {img} alt="User Image" width = "20"/> 
+                  {suggestion.username} - {suggestion.role}
                 </li>
               );
             })}

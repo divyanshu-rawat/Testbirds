@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import '../../Assets/App.css';
 import data from '../../DataSet/data.json'
 import img from '../../Assets/avatar-default.png'
+import {Navbar} from '../..//Router/Components/NavigationBar'
 
 class ShowAllMembers extends Component {
 
@@ -44,6 +45,8 @@ class ShowAllMembers extends Component {
 
     	return (
 
+        <div>
+        <Navbar />
           <div className = "container">
 		       <h3 className = "_margin_five ">Team Members!</h3>
 	            <div className="row">
@@ -62,6 +65,7 @@ class ShowAllMembers extends Component {
               { ShowMembers <  data.length && <button type="button" className="btn btn-primary" onClick={toggle}>Show More!</button>}
               { ShowMembers >= data.length && <button type="button" className="btn btn-primary" onClick={toggle}>Show Less!</button>}
 		      </div>	
+      </div>
     	);
   }
 }
