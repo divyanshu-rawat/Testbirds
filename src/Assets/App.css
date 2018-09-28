@@ -28,7 +28,8 @@
 
 .team-member{
   border: 1px solid black;
-  margin: 10px;
+  margin: 4px;
+  padding: 2px;
 }
 
 .cursor{

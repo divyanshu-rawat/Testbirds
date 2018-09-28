@@ -1,6 +1,6 @@
 
 import { combineReducers } from 'redux'
-import  app from './app'
-import Team from './Team'
+import  app from './App-Reducer'
+import Team from './Team-Reducer'
 
 export default combineReducers({app,Team})

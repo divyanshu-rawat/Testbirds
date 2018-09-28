@@ -1,7 +1,9 @@
 
 
 import React, { Component } from 'react';
-import img from '../../Assets/avatar-default.png'
+import avatar from '../../Assets/avatar-default.png'
+import check from '../../Assets/check.png'
+
 
 
 class Member extends React.Component{
@@ -10,8 +12,11 @@ class Member extends React.Component{
 		super(props)
 
 		this.state = {
-	  		showTimes: true
+	  		showTimes: true,
+	  		check : check
 		}
+
+		console.log('property', this.props)
 
 		this.show = this.show.bind(this)
   		this.hide = this.hide.bind(this)
@@ -31,53 +36,34 @@ class Member extends React.Component{
 	    	this.setState({showTimes: true })
 	  };
 
+	  componentDidUpdate(){
+	  	console.log('fffff',this.state.listValue,this.props)
+	  }
+
 
 	render(){
 
-		const {show,hide,remove, state : {showTimes}} = this
+	  const {show,hide,remove, state : {showTimes,check}} = this
+	  const {listValue} = this.props
 
-		return(
+	  return(
 
-			<div>
-			    <h4></h4>
-			    <div className="alert alert-info">
-				  Your <strong>Team</strong> For This Test.
-				</div>
-
-			    <div className="row">
-			        <div>
-			            { showTimes && this.props.state.Team.map((listValue,i) => { 
-			     			return <div className="col-lg-3 team-member" key={i}>
-
-			                <img className="insideMargin" src={img} alt="User Image" width="50" onMouseEnter={ show } />
-
-			                <h4 className="displayInline">({listValue.role})</h4>
-			                <p> {listValue.username} </p>
-			            </div>
-
-			            }) }
-			        </div>
-
-			        <div>
-			            { !showTimes && this.props.state.Team.map((listValue,i) => { 
-			            	return  <div className="team-member col-lg-3" key={i}>
-			                
-			                <i className="fa fa-times cursor fa-4x" aria-hidden="true" onMouseLeave={ hide } onClick={()=> remove(listValue)}></i>
-
-			                <h4 className="displayInline">({listValue.role})</h4>
-			                <p> {listValue.username} </p>
-			            </div>
-
-			            }) }
-			        </div>
-
-			    </div>
-			</div>
+		<div>
+		        <div>
+		            { 
+		               <div className="team-member">
+		                  {showTimes && <img className="insideMargin" src={avatar} alt="User Image" width="50" onMouseEnter={ show } />}
+		                  {!showTimes && <img className="insideMargin" src={check} alt="User Image" width="50" onMouseLeave={ hide } onClick={()=> remove(listValue)} />}
+		                  <h4 className="displayInline">({listValue.role})</h4>
+		                  <p> {listValue.username} </p>
+		               </div>
+		            }
+		        </div>
+	   </div>
+		
 		)
 	}
 
 }
-
-
 export default Member
 

@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import '../../Assets/App.css';
-import data from '../../Data_set/data.json'
+import data from '../../DataSet/data.json'
 import Team from '../../Containers/Team-Members-Container/TeamContainer';
 import AutoComplete from '../AutoComplete-Component'
 

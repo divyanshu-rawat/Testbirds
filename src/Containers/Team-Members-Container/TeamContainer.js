@@ -10,5 +10,4 @@ const mapStateToProps = (state) => {
 	return { state : state}
 }
 const mapDispatchToProps = (dispatch) => bindActionCreators({ delete_team_member }, dispatch);
-
 export default connect(mapStateToProps, mapDispatchToProps)(Team);

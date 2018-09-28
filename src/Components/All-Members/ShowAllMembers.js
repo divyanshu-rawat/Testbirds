@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import '../../Assets/App.css';
-import data from '../../Data_set/data.json'
+import data from '../../DataSet/data.json'
 import img from '../../Assets/avatar-default.png'
 
 class ShowAllMembers extends Component {

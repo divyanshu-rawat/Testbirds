@@ -9,5 +9,4 @@ import { save_json_data } from '../ActionCreators';
 const mapStateToProps = (state) => {
 	return { state : state}
 }
-
 export default connect(mapStateToProps)(App);

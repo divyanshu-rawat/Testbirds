@@ -1,7 +1,7 @@
 
 
-import * as t from '../ActionTypes';
-import data from '../Data_set/data.json'
+import * as t from '../../ActionTypes';
+import data from '../../DataSet/data.json'
 
 const app = (state = data , action) => {
 
