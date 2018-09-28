@@ -11,8 +11,7 @@ class ShowAllMembers extends Component {
   	super(props)
   	this.state = {
   		data: [],
-  		ShowMembers : 5,
-      show_more_Button:true
+  		ShowMembers : 5
   	}
 
     this.toggle = this.toggle.bind(this)

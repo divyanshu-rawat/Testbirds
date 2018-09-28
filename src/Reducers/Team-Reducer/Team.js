@@ -4,7 +4,12 @@
 
 import * as t from '../../ActionTypes';
 
-const Team = (state = [] , action) => {
+const Team = (state = [ {
+    "username": "Minta János",
+    "role": "Internal",
+    "picture": "avatar-default.png",
+    "id": 3
+  }] , action) => {
 
 	switch(action.type){
 

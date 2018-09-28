@@ -16,8 +16,6 @@ class Member extends React.Component{
 	  		check : check
 		}
 
-		console.log('property', this.props)
-
 		this.show = this.show.bind(this)
   		this.hide = this.hide.bind(this)
   		this.remove = this.remove.bind(this)
@@ -37,7 +35,6 @@ class Member extends React.Component{
 	  };
 
 	  componentDidUpdate(){
-	  	console.log('fffff',this.state.listValue,this.props)
 	  }
 
 
