@@ -10,7 +10,7 @@ Instructions To Run:
 
 
 Application Features:
-* [AutoComplete](https://github.com/divyanshu-rawat/AutoComplete) dropdown written specifically for this application.
+* [AutoComplete](https://github.com/divyanshu-rawat/AutoComplete-Package) dropdown written specifically for this application.
 * Add Members, Delete Members, Show Max of 5 Members.
 
 
